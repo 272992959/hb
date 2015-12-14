@@ -1,0 +1,121 @@
+header {
+  position: fixed;
+  height: 74px;
+  width: 100%;
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  z-index: 999;
+  text-align: center;
+}
+header .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: left;
+  padding: 12px 20px;
+}
+header .logo img {
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+header .logo h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 50px;
+  margin-left: 65px;
+  font-weight: normal;
+  white-space: nowrap;
+  color: #fff;
+}
+header .words {
+  position: absolute;
+  left: 220px;
+  top: 40px;
+  color: #F9DEA7;
+  font-weight: normal;
+  font-size: 24px;
+}
+header #menu {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: 100%;
+  font-size: 0;
+  position: relative;
+}
+header #menu li[data-menuanchor] {
+  display: inline-block;
+  height: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 0;
+}
+header #menu li[data-menuanchor] a {
+  display: block;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 40px 20px 0 20px;
+  height: 100%;
+  font-size: 18px;
+  transition: color .5s;
+}
+header #menu li[data-menuanchor].active a {
+  color: #5EB9CC;
+}
+header #menu li[data-menuanchor].active ~ li.line {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: #5EB9CC;
+  transition: all .5s;
+}
+header #menu li[data-menuanchor].active[data-menuanchor=page_home] ~ li.line {
+  left: 0px;
+  width: 76px;
+}
+header #menu li[data-menuanchor].active[data-menuanchor=page_business] ~ li.line {
+  left: 76px;
+  width: 76px;
+}
+header #menu li[data-menuanchor].active[data-menuanchor=page_customer] ~ li.line {
+  left: 152px;
+  width: 76px;
+}
+header #menu li[data-menuanchor].active[data-menuanchor=page_advantage] ~ li.line {
+  left: 228px;
+  width: 76px;
+}
+header #menu li[data-menuanchor].active[data-menuanchor=page_contact] ~ li.line {
+  left: 304px;
+  width: 112px;
+}
+header .hotline {
+  position: absolute;
+  right: 35px;
+  top: 0px;
+  line-height: 74px;
+}
+header .hotline a {
+  color: #5EB9CC;
+}
+header .hotline a i,
+header .hotline a span {
+  line-height: 20px;
+  vertical-align: middle;
+}
+header .hotline a i {
+  border: 2px solid #5EB9CC;
+  padding: 5px;
+  border-radius: 100%;
+  font-size: 25px;
+}
+header .hotline a span {
+  margin-left: 5px;
+  font-size: 18px;
+}

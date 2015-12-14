@@ -1,0 +1,113 @@
+.slide {
+  background-position: 50%;
+}
+.slide_city {
+  position: relative;
+  background-image: url('../img/home/city.jpg');
+}
+.slide_city .mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.78);
+  transition: background-color 1.5s ease-in;
+}
+.slide_city .mask.sunshine {
+  background-color: rgba(0, 0, 0, 0);
+}
+.slide_city .content {
+  color: #333;
+}
+.slide_city .content h2 {
+  -webkit-transform: translate3d(0, -3000px, 0);
+  transform: translate3d(0, -3000px, 0);
+  font-size: 80px;
+  font-weight: normal;
+}
+.slide_city .content p {
+  font-size: 48px;
+  line-height: 1em;
+  letter-spacing: -0.4em;
+}
+.slide_city .content p.p-up {
+  -webkit-transform: translate3d(0, 3000px, 0);
+  transform: translate3d(0, 3000px, 0);
+}
+.slide_city .content p.p-down {
+  -webkit-transform: translate3d(0, 3000px, 0);
+  transform: translate3d(0, 3000px, 0);
+}
+.slide_mountain {
+  background-image: url('../img/home/mountain.jpg');
+  position: relative;
+}
+.slide_mountain #eagle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(85deg) scale(0.05);
+  transition: all 1.5s ease-in;
+}
+.slide_mountain #eagle.fly_end {
+  transform: rotate(0deg) scale(1);
+}
+.slide_mountain .content {
+  opacity: 0;
+  color: #333;
+  text-align: left;
+  padding-left: 20%;
+}
+.slide_mountain .content h2 {
+  font-size: 60px;
+  font-weight: normal;
+}
+.slide_mountain .content h2:first-letter {
+  font-size: 80px;
+}
+.slide_mountain .content p {
+  font-size: 20px;
+  line-height: 1.5em;
+  letter-spacing: 5px;
+  font-family: serif, "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial;
+}
+.slide_moon {
+  background-image: url('../img/home/moon.jpg');
+}
+.slide_moon .content {
+  opacity: 0;
+  -webkit-transform: scale3d(0.3, 0.3, 0.3);
+  transform: scale3d(0.3, 0.3, 0.3);
+  color: #fff;
+  margin-right: 50%;
+  transition: all 3s;
+}
+.slide_moon .content h2 {
+  font-size: 65px;
+  font-weight: normal;
+  float: right;
+  width: 120px;
+  margin: 0;
+  padding: 80px 10px;
+}
+.slide_moon .content h2:first-letter {
+  font-size: 120px;
+}
+.slide_moon .content p {
+  padding: 80px 10px;
+  float: right;
+  width: 39px;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.4em;
+  font-family: serif, "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial;
+}
+.slide_moon .content p span {
+  padding: 20px;
+}
+.slide_moon .content.showing {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}

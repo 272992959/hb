@@ -1,0 +1,55 @@
+.section_contact {
+    background: #fff url("../img/contact/climb.png") left center no-repeat;
+    background-size: auto 200%;
+    transition: all 1.5s;
+    position: relative;
+    .content {
+        margin-left: 50%;
+        text-align: left;
+        -webkit-transform: translate3d(2000px, 0, 0);
+        transform: translate3d(2000px, 0, 0);
+        h2 {
+            font-size: 50px;
+            font-weight: normal;
+            &:first-letter {
+                font-size: 80px;
+                margin-left: -0.15em;
+            }
+        }
+        p {
+            font-size: 20px;
+            strong {
+                font-size: 25px;
+            }
+        }
+        ul {
+            li {
+                height: 60px;
+                i {
+                    font-size: 30px;
+                    color: #FD8926;
+                    border: 1px solid #FD8926;
+                    border-radius: 100%;
+                    padding: 5px;
+                    // 由于邮箱图标略小，此处做一下hack
+                    &.icon-email {
+                        font-size: 40px;
+                        padding: 0;
+                    }
+                }
+                span {
+                    font-size: 20px;
+                    font-family: Arial, serif, "Helvetica Neue", Helvetica, "Microsoft YaHei";
+                }
+            }
+        }
+    }
+    .qrcode {
+        position: absolute;
+        right: 80px;
+        bottom: 40px;
+    }
+    &.showing {
+        background-size: auto 100%;
+    }
+}

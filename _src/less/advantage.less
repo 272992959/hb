@@ -1,0 +1,40 @@
+.section_advantage {
+    background-color: #D3F3FF;
+    ul {
+        li {
+            display: inline-block;
+            width: 20%;
+            cursor: pointer;
+            .icon_ct {
+                color: #FD8926;
+                height: 150px;
+                width: 150px;
+                border-radius: 100%;
+                background-color: transparent;
+                margin: 10px auto 30px;
+                line-height: 150px;
+                transition: all 1.5s;
+                i {
+
+                display: block;
+                    font-size: 100px;
+                    &::before {
+                        vertical-align: -0.1em;
+                    }
+                }
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+        li.active {
+            .icon_ct {
+                color: #fff;
+                background-color: #FD8926;
+            }
+        }
+    }
+}

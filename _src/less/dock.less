@@ -1,0 +1,88 @@
+// 浮动图标组
+#dock {
+    position: fixed;
+    z-index: 200;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    height: 370px;
+    margin-top: -150px;
+    .icons {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 300px;
+        border: 1px solid #ffd08e;
+        border-right: none;
+        border-radius: 10px 0 0 10px;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, .5);
+        li {
+            line-height: 60px;
+            position: relative;
+            left: -1px;
+            padding-left: 1px;
+            height: 60px;
+            cursor: pointer;
+            text-align: center;
+            i.iconfont {
+                font-size: 2em;
+                color: #ffd08e;
+            }
+            p {
+                font-size: 14px;
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                right: 50px;
+                -webkit-transform: translate3d(200%, 0, 0);
+                transform: translate3d(200%, 0, 0);
+                min-width: 130px;
+                background: rgb(0, 0, 0);
+                background: rgba(0, 0, 0, .6);
+                color: #fff;
+                border-radius: 15px 0 0 15px;
+                margin: 0;
+                line-height: 1.5em;
+                padding: 20px;
+                .btn {
+                    margin-top: 10px;
+                }
+                .phone_num {
+                    color: #fff;
+                    &:hover {
+                        color: #5EB9CC;
+                    }
+                }
+                img{
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+        }
+    }
+    a.iconfont {
+        font-size: 40px;
+        position: absolute;
+        bottom: 0;
+        width: 50px;
+        cursor: pointer;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        color: rgba(0, 0, 0, .5);
+        transition: transform .5s;
+        -ms-transition: -ms-transform .5s;
+        -moz-transition: -moz-transform .5s;
+        -webkit-transition: -webkit-transform .5s;
+        -o-transition: -o-transform .5s;
+    }
+    a.iconfont.rotate2plus {
+        transform: rotate(405deg);
+        -ms-transform: rotate(405deg);
+        -moz-transform: rotate(405deg);
+        -webkit-transform: rotate(405deg);
+        -o-transform: rotate(405deg);
+    }
+}

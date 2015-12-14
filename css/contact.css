@@ -1,0 +1,52 @@
+.section_contact {
+  background: #ffffff url("../img/contact/climb.png") left center no-repeat;
+  background-size: auto 200%;
+  transition: all 1.5s;
+  position: relative;
+}
+.section_contact .content {
+  margin-left: 50%;
+  text-align: left;
+  -webkit-transform: translate3d(2000px, 0, 0);
+  transform: translate3d(2000px, 0, 0);
+}
+.section_contact .content h2 {
+  font-size: 50px;
+  font-weight: normal;
+}
+.section_contact .content h2:first-letter {
+  font-size: 80px;
+  margin-left: -0.15em;
+}
+.section_contact .content p {
+  font-size: 20px;
+}
+.section_contact .content p strong {
+  font-size: 25px;
+}
+.section_contact .content ul li {
+  height: 60px;
+}
+.section_contact .content ul li i {
+  font-size: 30px;
+  color: #FD8926;
+  border: 1px solid #FD8926;
+  border-radius: 100%;
+  padding: 5px;
+}
+.section_contact .content ul li i.icon-email {
+  font-size: 40px;
+  padding: 0;
+}
+.section_contact .content ul li span {
+  font-size: 20px;
+  font-family: Arial, serif, "Helvetica Neue", Helvetica, "Microsoft YaHei";
+}
+.section_contact .qrcode {
+  position: absolute;
+  right: 80px;
+  bottom: 40px;
+}
+.section_contact.showing {
+  background-size: auto 100%;
+}

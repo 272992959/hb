@@ -1,0 +1,96 @@
+.section_customer {
+    background-color: #DCDA86;
+    background-image: url('../img/customer/customer_box.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 250px;
+    .customer_ct {
+        background: -webkit-radial-gradient(50% 50%, farthest-side, rgba(255, 255, 255, 1), rgba(220, 218, 134, 0));
+        background: -o-radial-gradient(50% 50%, farthest-side, rgba(255, 255, 255, 1), rgba(220, 218, 134, 0));
+        background: -moz-radial-gradient(50% 50%, farthest-side, rgba(255, 255, 255, 1), rgba(220, 218, 134, 0));
+        background: radial-gradient(50% 50%, farthest-side, rgba(255, 255, 255, 1), rgba(220, 218, 134, 0));
+        text-align: center;
+        width: 85%;
+        margin: 0 auto;
+        height: 700px;
+        overflow: hidden;
+        position: relative;
+        .grid {
+            margin: 0 auto;
+            .grid-item {
+                width: 210px;
+                height: 100px;
+                line-height: 100px;
+                font-size: 0;
+                transition: all 1.5s,background-color .8s;
+                box-shadow: 2px 2px 2px #CAC9A7;
+
+                transform: rotate(0deg) scale(1);
+
+                border-radius: 3px;
+                background-color: transparent;
+                img {
+                    vertical-align: middle;
+                    transition: all .8s;
+                }
+            }
+            .in-box.grid-item{
+                transform: rotate(1080deg) scale(0);
+                position: absolute;
+                top: 115%!important;
+                left: 50%!important;
+            }
+            .active.grid-item {
+                box-shadow: 15px 15px 15px #CAC9A7;
+                background-color: #fff;
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .fuzzy_left {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            width: 210px;
+            height: 100px;
+            background-color: #f00;
+        }
+    }
+}
+
+@media (max-height: 850px) {
+    .section_customer .customer_ct {
+        height: 600px;
+    }
+}
+
+@media (max-height: 750px) {
+    .section_customer .customer_ct {
+        height: 500px;
+    }
+}
+
+@media (max-height: 650px) {
+    .section_customer .customer_ct {
+        height: 400px;
+    }
+}
+
+@media (max-height: 550px) {
+    .section_customer .customer_ct {
+        height: 300px;
+    }
+}
+
+@media (max-height: 450px) {
+    .section_customer .customer_ct {
+        height: 200px;
+    }
+}
+
+@media (max-height: 350px) {
+    .section_customer .customer_ct {
+        height: 100px;
+    }
+}
