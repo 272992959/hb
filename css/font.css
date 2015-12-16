@@ -59,6 +59,9 @@
 .icon-switch:before {
   content: "\e607";
 }
+.icon-menu:before {
+  content: "\e60d";
+}
 .icon-email:before {
   content: "\e600";
 }

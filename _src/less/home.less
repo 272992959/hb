@@ -1,6 +1,7 @@
 // 条目
 .slide {
     background-position: 50%;
+    background-size: cover;
 }
 
 .slide_city {
@@ -12,28 +13,33 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, .78);
+        background-color: rgba(0, 0, 0, .88);
         transition: background-color 1.5s ease-in;
     }
     .mask.sunshine {
-        background-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, .3);
     }
     .content {
-        color: #333;
+        color: #fff;
         h2 {
             -webkit-transform: translate3d(0, -3000px, 0);
             transform: translate3d(0, -3000px, 0);
-            font-size: 80px;
+            font-size: 8rem;
             font-weight: normal;
+            transition: all .5s;
         }
         p {
-            font-size: 48px;
+            font-size: 4.8rem;
             line-height: 1em;
             letter-spacing: -.4em;
+            margin: 0 auto;
+            max-width: 90%;
+            transition: all .5s;
         }
         p.p-up {
             -webkit-transform: translate3d(0, 3000px, 0);
             transform: translate3d(0, 3000px, 0);
+            margin-bottom: 20px;
         }
         p.p-down {
             -webkit-transform: translate3d(0, 3000px, 0);
@@ -45,73 +51,175 @@
 .slide_mountain {
     background-image: url('../img/home/mountain.jpg');
     position: relative;
+    font-size: 2rem;
+    transition: font-size .5s;
+    .mask {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, .3);
+    }
     #eagle {
         position: absolute;
         top: 0;
         right: 0;
         transform: rotate(85deg) scale(0.05);
-        transition: all 1.5s ease-in;
+        transition: all 1.5s linear;
+        max-width: 100%;
+        img {
+            max-width: 100%;
+        }
     }
     #eagle.fly_end {
         transform: rotate(0deg) scale(1);
     }
     .content {
         opacity: 0;
-        color: #333;
+        color: #fff;
         text-align: left;
         padding-left: 20%;
         h2 {
-            font-size: 60px;
+            font-size: 3em;
             font-weight: normal;
             &:first-letter {
-                font-size: 80px;
+                font-size: 1.25em;
             }
         }
         p {
-            font-size: 20px;
+            font-size: 1em;
             line-height: 1.5em;
-            letter-spacing: 5px;
-            font-family: serif, "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial;
+            letter-spacing: .25em;
         }
     }
 }
 
 .slide_moon {
     background-image: url('../img/home/moon.jpg');
+    position: relative;
+    .mask {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, .3);
+    }
     .content {
         opacity: 0;
         -webkit-transform: scale3d(.3, .3, .3);
         transform: scale3d(.3, .3, .3);
         color: #fff;
         margin-right: 50%;
-        transition: all 3s;
+        overflow: hidden;
+        transition: all 1.5s;
+        font-size: 2rem;
         h2 {
-            font-size: 65px;
+            font-size: 3.25em;
             font-weight: normal;
             &:first-letter {
-                font-size: 120px;
+                font-size: 1.8em;
             }
             float: right;
-            width: 120px;
+            width: 1.8em;
             margin: 0;
-            padding: 80px 10px;
+            padding: 1.5em 0.15em;
         }
         p {
-            padding: 80px 10px;
+            padding: 4.875em 1em;
             float: right;
-            width: 39px;
+            width: 2em;
             margin: 0;
-            font-size: 20px;
+            font-size: 1em;
             line-height: 1.4em;
-            font-family: serif, "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial;
-            span {
-                padding: 20px;
-            }
+            letter-spacing: 1em;
+            word-wrap: break-word;
         }
     }
     .content.showing {
         opacity: 1;
         -webkit-transform: scale3d(1, 1, 1);
         transform: scale3d(1, 1, 1);
+    }
+}
+
+@media (max-width: 1000px) {
+    .slide_mountain {
+        font-size: 1.6rem;
+        #eagle {
+            max-width: 50%;
+        }
+    }
+    .slide_moon .content{
+        margin-right: 40%;
+
+        font-size: 1.8rem;
+        p {
+            padding: 4.875em .75em;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .slide_mountain {
+        font-size: 1.4rem;
+    }
+    .slide_moon .content{
+        margin-right: 30%;
+
+        font-size: 1.6rem;
+        p {
+            padding: 4.875em .6em;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .slide_city {
+        .content {
+            h2 {
+                font-size: 6rem;
+                margin-top: 0;
+            }
+            p {
+                font-size: 3.6rem;
+                max-width: 80%;
+            }
+        }
+    }
+    .slide_mountain {
+        .content {
+            padding-left: 2em;
+            padding-right: 5em;
+            h2{
+                margin-top: 0;
+            }
+        }
+    }
+    .slide_moon .content{
+        font-size: 1.4rem;
+        p {
+            padding: 4.875em .5em;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .slide_mountain{
+        #eagle {
+            top: 50px;
+        }
+    }
+    .slide_city {
+        .content {
+            p {
+                font-size: 3.2rem;
+                max-width: 70%;
+            }
+        }
+    }
+    .slide_moon .content{
+        margin-right: 20%;
     }
 }

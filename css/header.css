@@ -1,50 +1,74 @@
 header {
   position: fixed;
-  height: 74px;
+  height: 3.7em;
   width: 100%;
   background-color: #000000;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   z-index: 999;
   text-align: center;
+  transition: all .5s;
+  font-size: 2rem;
 }
 header .logo {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: .5em;
+  left: 2em;
   text-align: left;
-  padding: 12px 20px;
+  height: 2.5em;
 }
 header .logo img {
   float: left;
-  width: 50px;
-  height: 50px;
+  width: 2.5em;
+  height: 2.5em;
+  transform: rotate(0deg);
+  transition: transform .5s;
 }
 header .logo h1 {
   margin: 0;
-  font-size: 32px;
-  line-height: 50px;
-  margin-left: 65px;
+  font-size: 2em;
+  line-height: 1.25em;
+  margin-left: 1.5em;
   font-weight: normal;
   white-space: nowrap;
-  color: #fff;
+  color: #65E4FF;
+  transition: letter-spacing 0.5s, opacity 0.5s;
 }
 header .words {
+  font-size: 20px;
   position: absolute;
-  left: 220px;
-  top: 40px;
-  color: #F9DEA7;
+  left: 14em;
+  bottom: .5em;
+  color: #e2e2e2;
   font-weight: normal;
-  font-size: 24px;
+  transition: all .5s;
 }
 header #menu {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -220px;
   list-style-type: none;
   height: 100%;
   font-size: 0;
-  position: relative;
+  transition: all .5s;
+}
+header #menu .menu-icon {
+  display: none;
+  width: 60px;
+  height: 100%;
+  cursor: pointer;
+}
+header #menu .menu-icon .iconfont {
+  font-size: 3rem;
+  line-height: 2.466667em;
+  color: #65E4FF;
+  transition: all .5s;
+}
+header #menu ul > li {
+  font-size: 2rem;
+  transition: all .5s;
 }
 header #menu li[data-menuanchor] {
   display: inline-block;
@@ -54,16 +78,16 @@ header #menu li[data-menuanchor] {
   padding: 0;
 }
 header #menu li[data-menuanchor] a {
+  font-weight: 700;
   display: block;
   color: #fff;
   box-sizing: border-box;
-  padding: 40px 20px 0 20px;
+  padding: 1.5em 1em 0 1em;
   height: 100%;
-  font-size: 18px;
   transition: color .5s;
 }
 header #menu li[data-menuanchor].active a {
-  color: #5EB9CC;
+  color: #65E4FF;
 }
 header #menu li[data-menuanchor].active ~ li.line {
   content: " ";
@@ -72,50 +96,208 @@ header #menu li[data-menuanchor].active ~ li.line {
   left: 0;
   width: 0;
   height: 5px;
-  background-color: #5EB9CC;
+  background-color: #65E4FF;
   transition: all .5s;
 }
 header #menu li[data-menuanchor].active[data-menuanchor=page_home] ~ li.line {
   left: 0px;
-  width: 76px;
+  width: 4em;
 }
 header #menu li[data-menuanchor].active[data-menuanchor=page_business] ~ li.line {
-  left: 76px;
-  width: 76px;
+  left: 4em;
+  width: 4em;
 }
 header #menu li[data-menuanchor].active[data-menuanchor=page_customer] ~ li.line {
-  left: 152px;
-  width: 76px;
+  left: 8em;
+  width: 4em;
 }
 header #menu li[data-menuanchor].active[data-menuanchor=page_advantage] ~ li.line {
-  left: 228px;
-  width: 76px;
+  left: 12em;
+  width: 4em;
 }
 header #menu li[data-menuanchor].active[data-menuanchor=page_contact] ~ li.line {
-  left: 304px;
+  left: 16em;
   width: 112px;
 }
 header .hotline {
   position: absolute;
-  right: 35px;
+  right: 2em;
   top: 0px;
-  line-height: 74px;
+  line-height: 3.7em;
 }
 header .hotline a {
-  color: #5EB9CC;
+  color: #65E4FF;
 }
 header .hotline a i,
 header .hotline a span {
-  line-height: 20px;
+  line-height: 1em;
   vertical-align: middle;
 }
 header .hotline a i {
-  border: 2px solid #5EB9CC;
-  padding: 5px;
   border-radius: 100%;
-  font-size: 25px;
+  font-size: 1.2em;
 }
 header .hotline a span {
   margin-left: 5px;
-  font-size: 18px;
+  font-size: 1em;
+  color: #e2e2e2;
+  transition: letter-spacing 0.5s, margin-left 0.5s, opacity 0.5s;
+}
+header.home {
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 2.4rem;
+}
+header.home #menu {
+  margin-left: -264px;
+}
+header.home #menu > li {
+  font-size: 2.4rem;
+}
+header.home #menu .menu-icon .iconfont {
+  font-size: 3.6rem;
+}
+header.home .logo {
+  left: 1em;
+}
+header.home .logo img {
+  transform: rotate(360deg);
+}
+header.home .words {
+  font-size: 14px;
+  bottom: 0;
+}
+@media (min-width: 1450px) {
+  header.home .words {
+    font-size: 20px;
+    bottom: 1em;
+    left: 15em;
+  }
+}
+@media (max-width: 1350px) {
+  header .words {
+    font-size: 14px;
+    bottom: 0;
+  }
+}
+@media (max-width: 1200px) {
+  header.home #menu {
+    left: 100%;
+    margin-left: -60px;
+  }
+  header.home #menu ul {
+    display: none;
+  }
+  header.home #menu .menu-icon {
+    display: block;
+  }
+  header.home #menu:hover ul {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-left: -40px;
+  }
+  header.home #menu:hover ul li {
+    padding: .5em;
+    width: 5em;
+  }
+  header.home #menu:hover ul li a {
+    padding: 0;
+    color: #fff;
+  }
+  header.home #menu:hover ul li:hover a {
+    color: #65E4FF;
+    text-decoration: underline;
+  }
+  header.home #menu:hover ul li[data-menuanchor].active ~ li.line {
+    width: 0;
+    font-size: 0;
+  }
+  header.home .words {
+    font-size: 20px;
+    bottom: 1em;
+    left: 15em;
+  }
+  header.home .hotline {
+    right: 3.5em;
+  }
+}
+@media (max-width: 1000px) {
+  header #menu {
+    left: 100%;
+    margin-left: -60px;
+  }
+  header #menu ul {
+    display: none;
+  }
+  header #menu .menu-icon {
+    display: block;
+  }
+  header #menu:hover ul {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-left: -40px;
+  }
+  header #menu:hover ul li {
+    padding: .5em;
+    width: 5em;
+  }
+  header #menu:hover ul li a {
+    padding: 0;
+    color: #fff;
+  }
+  header #menu:hover ul li:hover a {
+    color: #65E4FF;
+    text-decoration: underline;
+  }
+  header #menu:hover ul li[data-menuanchor].active ~ li.line {
+    width: 0;
+    font-size: 0;
+  }
+  header .hotline {
+    right: 3.5em;
+  }
+  header .words {
+    font-size: 20px;
+  }
+}
+@media (max-width: 800px) {
+  header .hotline,
+  header.home .hotline {
+    right: 3.5em;
+  }
+  header .hotline a span,
+  header.home .hotline a span {
+    opacity: 0;
+    margin-left: 0;
+    letter-spacing: -1em;
+  }
+  header .words {
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  header .words,
+  header.home .words {
+    font-size: 14px;
+    bottom: 0;
+  }
+}
+@media (max-width: 500px) {
+  header .words,
+  header.home .words {
+    font-size: 0px;
+  }
+}
+@media (max-width: 450px) {
+  header.home .logo h1 {
+    letter-spacing: 0;
+    opacity: 1;
+    font-size: 1.5em;
+    margin-left: 2em;
+    line-height: 1.66667em;
+  }
+  header .logo h1 {
+    opacity: 0;
+    letter-spacing: -1em;
+    margin-left: 0;
+  }
 }

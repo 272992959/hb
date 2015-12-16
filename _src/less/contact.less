@@ -1,44 +1,42 @@
 .section_contact {
-    background: #fff url("../img/contact/climb.png") left center no-repeat;
+    background: #fff url("../img/contact/climb.png") left bottom no-repeat;
     background-size: auto 200%;
-    transition: all 1.5s;
+    transition: all .5s ease-in;
     position: relative;
+    font-size: 2rem;
     .content {
-        margin-left: 50%;
+        // margin-left: 50%;
+        float: right;
+        margin-right: 20%;
         text-align: left;
         -webkit-transform: translate3d(2000px, 0, 0);
         transform: translate3d(2000px, 0, 0);
         h2 {
-            font-size: 50px;
+            font-size: 2.5em;
             font-weight: normal;
             &:first-letter {
-                font-size: 80px;
+                font-size: 1.6em;
                 margin-left: -0.15em;
             }
         }
         p {
-            font-size: 20px;
+            font-size: 1em;
             strong {
-                font-size: 25px;
+                font-size: 1.25em;
             }
         }
         ul {
             li {
-                height: 60px;
+                height: 3em;
                 i {
-                    font-size: 30px;
+                    font-size: 1.5em;
                     color: #FD8926;
                     border: 1px solid #FD8926;
                     border-radius: 100%;
                     padding: 5px;
-                    // 由于邮箱图标略小，此处做一下hack
-                    &.icon-email {
-                        font-size: 40px;
-                        padding: 0;
-                    }
                 }
                 span {
-                    font-size: 20px;
+                    font-size: 1em;
                     font-family: Arial, serif, "Helvetica Neue", Helvetica, "Microsoft YaHei";
                 }
             }
@@ -46,10 +44,37 @@
     }
     .qrcode {
         position: absolute;
-        right: 80px;
-        bottom: 40px;
+        right: 4em;
+        bottom: 2em;
+        img {
+            width: 7.5em;
+            height: 7.5em;
+        }
     }
     &.showing {
         background-size: auto 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .section_contact {
+        .content {
+            margin-right: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .section_contact {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .section_contact {
+        font-size: 1.2rem;
+        &.showing {
+            background-size: auto 75%;
+        }
     }
 }

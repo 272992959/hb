@@ -2,432 +2,80 @@
 <html>
 
 <head>
-    <meta charset="gb2312" />
-    <title>Animated Books with CSS 3D Transforms</title>
-    <style>
-    /*
-    A. Mini Reset 
-*/
-    
-    *,
-    *:after,
-    *:before {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-    
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    
-    ::before,
-    ::after {
-        content: "";
-    }
-    
-    html,
-    body {
-        height: 100%;
-        -webkit-font-smoothing: subpixel-antialiased;
-    }
-    
-    html {
-        font-size: 100%;
-    }
-    
-    body {
-        background: #ecf0f1;
-        color: #34495e;
-        font-family: 'Lato', 'Arial', sans-serif;
-        font-weight: 400;
-        line-height: 1.2;
-    }
-    
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-    
-    a {
-        color: #2c3e50;
-        text-decoration: none;
-    }
-    /* basic grid, only for this demo */
-    
-    .books {
-        clear: both;
-        margin: 90px auto 20px;
-        width: 100%;
-        max-width: 1170px;
+    <title>getGold</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <style type="text/css">
+    .container {
+        width: 60%;
+        margin: 0 auto;
+        border: 1px solid #ccc;
         text-align: center;
     }
     
-    .books > li {
-        /*width: 500px;*/
-        /*min-height: 300px;*/
-        display: inline-block;
-        margin: 30px 20px 30px 30px;
-        padding: 0 0 0 60px;
-        vertical-align: top;
-    }
-    /* ///////////////////////////////////////////////////
-
-HARDCOVER
-Table of Contents
-
-1. books
-2. background & color
-3. opening cover, back cover and pages
-4. position, transform y transition
-5. events
-6. Bonus
-    - Cover design
-    - Ribbon
-    - Figcaption
-7. mini-reset
-
-/////////////////////////////////////////////////////*/
-    /*
-    1. books
-*/
-    
-    .book {
-        position: relative;
-        width: 160px;
-        height: 220px;
-        -webkit-perspective: 1000px;
-        -moz-perspective: 1000px;
-        perspective: 1000px;
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-    }
-    /*
-    2. background & color
-*/
-    /* reverse */
-    
-    .cover_first:before {
-        position: absolute;
-        top: -1px;
-        bottom: -1px;
-        left: -5px;
-        right: 100%;
-        background-color: #444040;
-        border-radius: 2px 0 0 2px;
-        -webkit-backface-visibility: hidden;
-        -moz-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
-    
-    .cover_last {
-        border-left: 3px solid #fff;
-        background-color: #FCB269;
-    }
-    /* page */
-    
-    .page > li {
-        background: -webkit-linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
-        background: -moz-linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
-        background: -ms-linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
-        background: linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
-        box-shadow: inset 0px -1px 2px rgba(50, 50, 50, 0.1), inset -1px 0px 1px rgba(150, 150, 150, 0.2);
-        border-radius: 0px 5px 5px 0px;
-    }
-    /*
-    3. opening cover, back cover and pages
-*/
-    
-    .cover_first {
-        -webkit-transform: rotateY(-30deg) translateZ(10px);
-        -moz-transform: rotateY(-30deg) translateZ(10px);
-        transform: rotateY(-30deg) translateZ(10px);
-        z-index: 100;
-        background-color: #FCB269;
-        background-image: -webkit-linear-gradient(top, #FFA851 0%, #FFC285 100%);
-        background-image: -moz-linear-gradient(top, #FFA851 0%, #FFC285 100%);
-        background-image: linear-gradient(top, #FFA851 0%, #FFC285 100%);
-    }
-    
-    .cover_first h2 {
-        color: #fff;
-        margin: 25px 0 60px 0;
-    }
-    
-    .cover_first p {
-        color: #D88D46;
-        margin: 10px 0;
-        font-size: 14px;
-    }
-    
-    .cover_last {
-        -webkit-transform: rotateY(-15deg) translateZ(-8px);
-        -moz-transform: rotateY(-15deg) translateZ(-8px);
-        transform: rotateY(-15deg) translateZ(-8px);
-    }
-    
-    .page li:nth-child(1) {
-        -webkit-transform: rotateY(-28deg);
-        -moz-transform: rotateY(-28deg);
-        transform: rotateY(-28deg);
-    }
-    
-    .page li:nth-child(2) {
-        -webkit-transform: rotateY(-30deg);
-        -moz-transform: rotateY(-30deg);
-        transform: rotateY(-30deg);
-    }
-    
-    .page li:nth-child(3) {
-        -webkit-transform: rotateY(-32deg);
-        -moz-transform: rotateY(-32deg);
-        transform: rotateY(-32deg);
-    }
-    
-    .page li:nth-child(4) {
-        -webkit-transform: rotateY(-34deg);
-        -moz-transform: rotateY(-34deg);
-        transform: rotateY(-34deg);
-    }
-    /*
-    4. position, transform & transition
-*/
-    
-    .cover_first,
-    .cover_last {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-        -webkit-transform-origin: 0% 100%;
-        -moz-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-    }
-    
-    .cover_first {
-        -webkit-transition: all 0.8s ease, z-index 0.6s;
-        -moz-transition: all 0.8s ease, z-index 0.6s;
-        transition: all 0.8s ease, z-index 0.6s;
-    }
-    
-    .page,
-    .page > li {
-        position: absolute;
-        top: 0;
-        left: 0;
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-    }
-    
-    .page {
-        width: 100%;
-        height: 98%;
-        top: 1%;
-        left: 3%;
-        z-index: 10;
-    }
-    
-    .page > li {
-        width: 100%;
-        height: 100%;
-        -webkit-transform-origin: left center;
-        -moz-transform-origin: left center;
-        transform-origin: left center;
-        -webkit-transition-property: transform;
-        -moz-transition-property: transform;
-        transition-property: transform;
-        -webkit-transition-timing-function: ease;
-        -moz-transition-timing-function: ease;
-        transition-timing-function: ease;
-        -webkit-transition-duration: 0.6s;
-        -moz-transition-duration: 0.6s;
-        transition-duration: 0.6s;
-    }
-    /*
-    5. events
-*/
-    
-    .book:hover > .cover_first {
-        -webkit-transform: rotateY(-145deg) translateZ(0);
-        -moz-transform: rotateY(-145deg) translateZ(0);
-        transform: rotateY(-145deg) translateZ(0);
-        z-index: 0;
-    }
-    
-    .book:hover > .page li:nth-child(1) {
-        -webkit-transform: rotateY(-30deg);
-        -moz-transform: rotateY(-30deg);
-        transform: rotateY(-30deg);
-        -webkit-transition-duration: 1.5s;
-        -moz-transition-duration: 1.5s;
-        transition-duration: 1.5s;
-    }
-    
-    .book:hover > .page li:nth-child(2) {
-        -webkit-transform: rotateY(-35deg);
-        -moz-transform: rotateY(-35deg);
-        transform: rotateY(-35deg);
-        -webkit-transition-duration: 1.8s;
-        -moz-transition-duration: 1.8s;
-        transition-duration: 1.8s;
-    }
-    
-    .book:hover > .page li:nth-child(3) {
-        -webkit-transform: rotateY(-118deg);
-        -moz-transform: rotateY(-118deg);
-        transform: rotateY(-118deg);
-        -webkit-transition-duration: 1.6s;
-        -moz-transition-duration: 1.6s;
-        transition-duration: 1.6s;
-    }
-    
-    .book:hover > .page li:nth-child(4) {
-        -webkit-transform: rotateY(-130deg);
-        -moz-transform: rotateY(-130deg);
-        transform: rotateY(-130deg);
-        -webkit-transition-duration: 1.4s;
-        -moz-transition-duration: 1.4s;
-        transition-duration: 1.4s;
-    }
-    /*
-    6. Bonus
-*/
-    /* Media Queries */
-    
-    @media screen and (max-width: 37.8125em) {
-        .books > li {
-            width: 100%;
-            min-height: 440px;
-            height: auto;
-            padding: 0;
-            margin: 0 0 30px 0;
-        }
-        .book {
-            margin: 0 auto;
-        }
+    input {
+        width: 80%;
+        margin: 20px 0;
+        height: 30px;
+        border: 1px solid #00f;
     }
     </style>
 </head>
 
 <body>
-    <ul class="books">
-        <li class='book'>
-            <div class='cover_first'>
-                <h2 class="animated">付费榜</h2>
-                <p>游戏或产品上架之前</p>
-                <p>高质量用户数据测试</p>
+    <div class="container">
+        <div class="ct">
+            <div>ID
+                <span>(去金币页面获取：console.log($(".task-list li").attr("data-id"));)</span>
             </div>
-            <ul class='page'>
-                <li></li>
-                <li>
-                    <ul>
-                        <li>第1名</li>
-                        <li>第2名</li>
-                        <li>第3名</li>
-                        <li>第4名</li>
-                        <li>第5名</li>
-                        <li>第6名</li>
-                        <li>第7名</li>
-                        <li>第8名</li>
-                        <li>第9名</li>
-                        <li>第10名</li>
-                    </ul>
-                </li>
-                <li></li>
-                <li></li>
-            </ul>
-            <div class='cover_last'></div>
-        </li>
-        <li class='book'>
-            <div class='cover_first'>
-                <h2 class="animated">热搜榜</h2>
-                <p>最热门的前十APP</p>
-                <p>增加APP的曝光度</p>
+            <input type="text" id="data_id">
+        </div>
+        <div class="ct">
+            <div>TOKEN
+                <span>(去金币页面获取：console.log(url("?accessToken"));)</span>
             </div>
-            <ul class='page'>
-                <li></li>
-                <li>
-                    <ul>
-                        <li>第1名</li>
-                        <li>第2名</li>
-                        <li>第3名</li>
-                        <li>第4名</li>
-                        <li>第5名</li>
-                        <li>第6名</li>
-                        <li>第7名</li>
-                        <li>第8名</li>
-                        <li>第9名</li>
-                        <li>第10名</li>
-                    </ul>
-                </li>
-                <li></li>
-                <li></li>
-            </ul>
-            <div class='cover_last'></div>
-        </li>
-        <li class='book'>
-            <div class='cover_first'>
-                <h2 class="animated">免费榜</h2>
-                <p>APP Store</p>
-                <p>曝光量最大的榜单</p>
-            </div>
-            <ul class='page'>
-                <li></li>
-                <li>
-                    <ul>
-                        <li>第1名</li>
-                        <li>第2名</li>
-                        <li>第3名</li>
-                        <li>第4名</li>
-                        <li>第5名</li>
-                        <li>第6名</li>
-                        <li>第7名</li>
-                        <li>第8名</li>
-                        <li>第9名</li>
-                        <li>第10名</li>
-                    </ul>
-                </li>
-                <li></li>
-                <li></li>
-            </ul>
-            <div class='cover_last'></div>
-        </li>
-        <li class='book'>
-            <div class='cover_first'>
-                <h2 class="animated">关键词优化</h2>
-                <p>持之以恒的关键词排名</p>
-                <p>时刻走在竞争对手前列</p>
-            </div>
-            <ul class='page'>
-                <li></li>
-                <li>
-                    <ul>
-                        <li>第1名</li>
-                        <li>第2名</li>
-                        <li>第3名</li>
-                        <li>第4名</li>
-                        <li>第5名</li>
-                        <li>第6名</li>
-                        <li>第7名</li>
-                        <li>第8名</li>
-                        <li>第9名</li>
-                        <li>第10名</li>
-                    </ul>
-                </li>
-                <li></li>
-                <li></li>
-            </ul>
-            <div class='cover_last'></div>
-        </li>
-    </ul>
+            <input type="text" id="data_token">
+        </div>
+        <button type="button">开始</button>
+    </div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    // var dataid = $(".task-list li").attr("data-id");
+    // var dataid = 23761;
+    var dataid = $.trim($("#data_id").val());
+    // var token = url("?accessToken");
+    // var token = "TVRNNU1UZzJNalEyT1RZLi1ALU9UVTFZV0l3TVRNMk56UXhaV1ZrTXpFeVpqY3dORFZpWm1SalkyTm1NV0kuLUAtMTQ1MDIyOTE3OTM3OC1ALWQyVnBlR2x1";
+    var token = $.trim($("#data_token").val());
+
+    function getGold() {
+        var dt = new Date;
+        var h = dt.getHours();
+        var m = dt.getMinutes();
+
+        // 0--31
+        var idx = (h - 7) * 2 + (m > 29 ? 1 : 0);
+        $.post("http://todaytask.x3china.com/newTodayTask/task/gold/addGold?timestamp=" + (+dt), {
+            accessToken: token,
+            taskId: dataid,
+            dateIndex: idx,
+            xy: xy(dataid, idx)
+        }).done(function(e) {
+            if (!e.errorCode) {
+                console.log(h + ":" + m + ",成功");
+            } else {
+                console.log(h + ":" + m + ",失败");
+            }
+            console.dir(e);
+        }).fail(function(e) {
+            console.log(h + ":" + m + ",失败");
+            console.dir(e);
+        });
+    }
+    $("button").click(function() {
+        conso
+        setInterval(getGold, 1000 * 60);
+    });
+    </script>
 </body>
 
 </html>

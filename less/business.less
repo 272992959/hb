@@ -140,20 +140,14 @@
                     -moz-transform: rotateY(-30deg);
                     transform: rotateY(-30deg);
                     p {
-                        // font-size: .5em;
-                        // margin: .5em 0;
-                        // color: #424242;
-                        // margin-right: 2em;
-                        // line-height: 1em;
-                        // width: 1em;
-                        // float: right;
-                        // white-space: pre-line;
-
                         font-size: .5em;
-                        margin: 1em 1em;
+                        margin: .5em 0;
                         color: #424242;
-                        text-align: left;
-                        line-height: 1.5em;
+                        margin-right: 2em;
+                        line-height: 1em;
+                        width: 1em;
+                        float: right;
+                        white-space: pre-line;
                     }
                 }
                 &:nth-child(3) {
@@ -217,28 +211,12 @@
             }
         }
     }
-    @media screen and (min-width: 1800px) {
-        .books {
-            font-size: 2.4rem;
-        }
-    }
-    @media screen and (max-width: 1500px) {
-        .books {
-            font-size: 1.8rem;
-            width: 40em;
-        }
-    }
-    @media screen and (max-width: 800px) {
-        .books {
-            font-size: 1.6rem;
-            .book{
-                margin: 1em 3em 1em .5em;
-            }
-        }
-    }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 450px) {
         .books {
             font-size: 1.2rem;
+            .book {
+                margin: 1em 2em;
+            }
         }
     }
 }

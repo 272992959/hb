@@ -1,35 +1,46 @@
 .section_advantage {
-  background-color: #D3F3FF;
+  background-color: #fff;
 }
 .section_advantage ul li {
   display: inline-block;
   width: 20%;
   cursor: pointer;
+  font-size: 2rem;
+  transition: all .5s;
 }
 .section_advantage ul li .icon_ct {
   color: #FD8926;
-  height: 150px;
-  width: 150px;
+  height: 7.5em;
+  width: 7.5em;
   border-radius: 100%;
   background-color: transparent;
-  margin: 10px auto 30px;
-  line-height: 150px;
+  margin: .5em auto 1.5em;
+  line-height: 7.5em;
   transition: all 1.5s;
 }
 .section_advantage ul li .icon_ct i {
   display: block;
-  font-size: 100px;
+  font-size: 5em;
 }
 .section_advantage ul li .icon_ct i::before {
   vertical-align: -0.1em;
 }
 .section_advantage ul li h2 {
-  font-size: 20px;
+  font-size: 1em;
 }
 .section_advantage ul li p {
-  font-size: 20px;
+  font-size: 1em;
 }
 .section_advantage ul li.active .icon_ct {
   color: #fff;
   background-color: #FD8926;
+}
+@media screen and (max-width: 800px) {
+  .section_advantage ul li {
+    width: 40%;
+    font-size: 1.6rem;
+  }
+  .section_advantage ul li .icon_ct {
+    margin-bottom: 1em;
+  }
 }
