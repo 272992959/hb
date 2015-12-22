@@ -1,6 +1,6 @@
 .section_contact {
   background: #ffffff url("../img/contact/climb.png") left bottom no-repeat;
-  background-size: auto 200%;
+  background-size: 200% auto;
   transition: all 0.5s ease-in;
   position: relative;
   font-size: 2rem;
@@ -26,13 +26,15 @@
 .section_contact .content p strong {
   font-size: 1.25em;
 }
+.section_contact .content ul {
+  margin-top: 2em;
+}
 .section_contact .content ul li {
   height: 3em;
 }
 .section_contact .content ul li i {
   font-size: 1.5em;
   color: #FD8926;
-  border: 1px solid #FD8926;
   border-radius: 100%;
   padding: 5px;
 }
@@ -50,7 +52,7 @@
   height: 7.5em;
 }
 .section_contact.showing {
-  background-size: auto 100%;
+  background-size: 35% auto;
 }
 @media screen and (max-width: 1200px) {
   .section_contact .content {
@@ -67,6 +69,6 @@
     font-size: 1.2rem;
   }
   .section_contact.showing {
-    background-size: auto 75%;
+    background-size: 50% auto;
   }
 }

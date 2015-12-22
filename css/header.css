@@ -301,3 +301,10 @@ header.home .words {
     margin-left: 0;
   }
 }
+@media (max-width: 400px) {
+  header.home .logo h1 {
+    opacity: 0;
+    letter-spacing: -1em;
+    margin-left: 0;
+  }
+}

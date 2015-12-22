@@ -4,7 +4,10 @@
 }
 .slide_city {
   position: relative;
-  background-image: url('../img/home/city.jpg');
+  background-image: url('../img/home/city.png');
+  background-position: 0 center;
+  background-size: cover;
+  transition: background-position-x 10s;
 }
 .slide_city .mask {
   position: absolute;
@@ -12,14 +15,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.88);
+  background-color: rgba(0, 0, 0, 0.5);
   transition: background-color 1.5s ease-in;
 }
 .slide_city .mask.sunshine {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0);
 }
 .slide_city .content {
-  color: #fff;
+  color: #35240C;
 }
 .slide_city .content h2 {
   -webkit-transform: translate3d(0, -3000px, 0);
@@ -44,6 +47,9 @@
 .slide_city .content p.p-down {
   -webkit-transform: translate3d(0, 3000px, 0);
   transform: translate3d(0, 3000px, 0);
+}
+.slide_city.active {
+  background-position-x: 100%;
 }
 .slide_mountain {
   background-image: url('../img/home/mountain.jpg');
@@ -94,6 +100,7 @@
 .slide_moon {
   background-image: url('../img/home/moon.jpg');
   position: relative;
+  overflow: hidden;
 }
 .slide_moon .mask {
   position: absolute;
@@ -101,17 +108,29 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-image: url('http://img01.sogoucdn.com/app/a/100540002/430175.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1);
+  transition: transform 10s;
+}
+.slide_moon.active .mask {
+  transform: scale(2);
 }
 .slide_moon .content {
   opacity: 0;
+  float: right;
   -webkit-transform: scale3d(0.3, 0.3, 0.3);
   transform: scale3d(0.3, 0.3, 0.3);
   color: #fff;
   margin-right: 50%;
   overflow: hidden;
-  transition: all 1.5s;
+  transition: all 3s;
   font-size: 2rem;
+  width: 22em;
+  padding: 5em;
+  background: -webkit-radial-gradient(closest-side, #000000, rgba(0, 0, 0, 0));
 }
 .slide_moon .content h2 {
   font-size: 3.25em;
@@ -127,7 +146,7 @@
 .slide_moon .content p {
   padding: 4.875em 1em;
   float: right;
-  width: 2em;
+  width: 1.5em;
   margin: 0;
   font-size: 1em;
   line-height: 1.4em;
@@ -198,6 +217,11 @@
     max-width: 70%;
   }
   .slide_moon .content {
-    margin-right: 20%;
+    margin-right: 10%;
+  }
+}
+@media (max-width: 400px) {
+  .slide_moon .content {
+    font-size: 1.2rem;
   }
 }
