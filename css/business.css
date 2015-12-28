@@ -1,0 +1,280 @@
+/* css3 v1.0 */
+.section_business {
+  background-color: #ffc781;
+  background-image: url('../img/business/bbg.png');
+  background-position: center;
+  background-size: cover;
+}
+.section_business ul,
+.section_business li {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.section_business ul {
+  list-style: none;
+}
+.section_business .books {
+  font-size: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+  text-align: center;
+}
+.section_business .books .book_box {
+  position: relative;
+  float: left;
+  width: 25%;
+  height: 16em;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
+}
+.section_business .books .book_box .book {
+  font-size: 2em;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  width: 4.2em;
+  height: 5.5em;
+  margin-top: -2.75em;
+  margin-left: -2.1em;
+  vertical-align: top;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+.section_business .books .book_box .book .cover_first,
+.section_business .books .book_box .book .cover_last {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.section_business .books .book_box .book .cover_first {
+  z-index: 100;
+  display: table;
+  -webkit-transition: all .8s ease, z-index .6s;
+  transition: all .8s ease, z-index .6s;
+  background: #5f7798 url('../img/business/bg.png') repeat;
+  -webkit-transform: rotateY(-37deg);
+  -moz-transform: rotateY(-37deg);
+  -ms-transform: rotateY(-37deg);
+  -o-transform: rotateY(-37deg);
+  transform: rotateY(-37deg);
+}
+.section_business .books .book_box .book .cover_first::before {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 11px;
+  content: '';
+  border-left: 1px dashed #efdba0;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.section_business .books .book_box .book .cover_first h2 {
+  font-size: 1em;
+  line-height: 1.2em;
+  display: table-cell;
+  width: 100%;
+  padding: 0 1.35em;
+  vertical-align: middle;
+  color: #fff;
+}
+.section_business .books .book_box .book .cover_last {
+  background-color: #5f7798;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: rotateY(-25deg);
+  -moz-transform: rotateY(-25deg);
+  -ms-transform: rotateY(-25deg);
+  -o-transform: rotateY(-25deg);
+  transform: rotateY(-25deg);
+}
+.section_business .books .book_box .book .page {
+  z-index: 10;
+  top: 1%;
+  left: 3%;
+  width: 100%;
+  height: 98%;
+}
+.section_business .books .book_box .book .page,
+.section_business .books .book_box .book .page > li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.section_business .books .book_box .book .page > li {
+  width: 100%;
+  height: 100%;
+  background: url('../img/business/paper.jpg') center no-repeat;
+  background-size: cover;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  -moz-transition: -moz-transform 0.6s ease;
+  -o-transition: -o-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -ms-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset 0 -1px 2px rgba(50, 50, 50, .1), inset -1px 0 1px rgba(150, 150, 150, .9);
+  -moz-box-shadow: inset 0 -1px 2px rgba(50, 50, 50, .1), inset -1px 0 1px rgba(150, 150, 150, .9);
+  box-shadow: inset 0 -1px 2px rgba(50, 50, 50, .1), inset -1px 0 1px rgba(150, 150, 150, .9);
+}
+.section_business .books .book_box .book .page > li p {
+  font-size: .58em;
+  line-height: 1.5em;
+  margin: 1em 1em;
+  text-align: left;
+  color: #424242;
+}
+.section_business .books .book_box .book .page > li:nth-child(1) {
+  -webkit-transform: rotateY(-28deg);
+  -moz-transform: rotateY(-28deg);
+  -ms-transform: rotateY(-28deg);
+  -o-transform: rotateY(-28deg);
+  transform: rotateY(-28deg);
+}
+.section_business .books .book_box .book .page > li:nth-child(2) {
+  -webkit-transform: rotateY(-30deg);
+  -moz-transform: rotateY(-30deg);
+  -ms-transform: rotateY(-30deg);
+  -o-transform: rotateY(-30deg);
+  transform: rotateY(-30deg);
+}
+.section_business .books .book_box .book .page > li:nth-child(3) {
+  -webkit-transform: rotateY(-32deg);
+  -moz-transform: rotateY(-32deg);
+  -ms-transform: rotateY(-32deg);
+  -o-transform: rotateY(-32deg);
+  transform: rotateY(-32deg);
+}
+.section_business .books .book_box .book .page > li:nth-child(4) {
+  -webkit-transform: rotateY(-34deg);
+  -moz-transform: rotateY(-34deg);
+  -ms-transform: rotateY(-34deg);
+  -o-transform: rotateY(-34deg);
+  transform: rotateY(-34deg);
+}
+.section_business .books .book_box .book.open .cover_first {
+  z-index: 0;
+  -webkit-transform: rotateY(-145deg);
+  -moz-transform: rotateY(-145deg);
+  -ms-transform: rotateY(-145deg);
+  -o-transform: rotateY(-145deg);
+  transform: rotateY(-145deg);
+}
+.section_business .books .book_box .book.open .page > li {
+  -webkit-transition-duration: 1.5s;
+  transition-duration: 1.5s;
+  -webkit-transform: rotateY(-30deg);
+  -moz-transform: rotateY(-30deg);
+  -ms-transform: rotateY(-30deg);
+  -o-transform: rotateY(-30deg);
+  transform: rotateY(-30deg);
+}
+.section_business .books .book_box .book.open .page > li:nth-child(1) {
+  -webkit-transition-duration: 1.5s;
+  transition-duration: 1.5s;
+  -webkit-transform: rotateY(-30deg);
+  -moz-transform: rotateY(-30deg);
+  -ms-transform: rotateY(-30deg);
+  -o-transform: rotateY(-30deg);
+  transform: rotateY(-30deg);
+}
+.section_business .books .book_box .book.open .page > li:nth-child(2) {
+  -webkit-transition-duration: 1.8s;
+  transition-duration: 1.8s;
+  -webkit-transform: rotateY(-35deg);
+  -moz-transform: rotateY(-35deg);
+  -ms-transform: rotateY(-35deg);
+  -o-transform: rotateY(-35deg);
+  transform: rotateY(-35deg);
+}
+.section_business .books .book_box .book.open .page > li:nth-child(3) {
+  -webkit-transition-duration: 1.6s;
+  transition-duration: 1.6s;
+  -webkit-transform: rotateY(-118deg);
+  -moz-transform: rotateY(-118deg);
+  -ms-transform: rotateY(-118deg);
+  -o-transform: rotateY(-118deg);
+  transform: rotateY(-118deg);
+}
+.section_business .books .book_box .book.open .page > li:nth-child(4) {
+  -webkit-transition-duration: 1.4s;
+  transition-duration: 1.4s;
+  -webkit-transform: rotateY(-130deg);
+  -moz-transform: rotateY(-130deg);
+  -ms-transform: rotateY(-130deg);
+  -o-transform: rotateY(-130deg);
+  transform: rotateY(-130deg);
+}
+.section_business .books .book_box:nth-child(4) .book .cover_first h2 {
+  font-size: .8em;
+  padding: 0 1.6875em;
+}
+.section_business .books::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+@media screen and (min-width: 1800px) {
+  .section_business .books {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .section_business .books {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .section_business .books .book_box {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .section_business .books {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .section_business .books {
+    font-size: 1.2rem;
+  }
+}

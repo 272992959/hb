@@ -1,0 +1,55 @@
+/* css3 v1.0 */
+html {
+  font-size: 16px;
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  font-family: Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.btn {
+  font-size: 14px;
+  font-weight: normal;
+  font-weight: 300;
+  line-height: 1.428571429;
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  margin-bottom: 0;
+  padding: 6px 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: #5bc0de;
+  border: 1px solid transparent;
+  border: 1px solid #5bc0de;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+.btn:hover {
+  color: white;
+  background: #5bc0de;
+}
+.hide {
+  display: none;
+}

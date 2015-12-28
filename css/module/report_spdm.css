@@ -1,9 +1,0 @@
-#report-chart,
-#app-chart,
-#origin-chart {
-  width: 100%;
-  height: 500px;
-}
-.select_origin.btn-group.pull-right {
-  margin-right: 20px;
-}
