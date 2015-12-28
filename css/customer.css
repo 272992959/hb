@@ -29,7 +29,7 @@
   transition: all .5s;
 }
 .section_customer .customer_view .customer_ct li:not(.bg-active) {
-  background: url(../img/customer/_a.png) no-repeat;
+  background: url(../img/customer/aaa.png) no-repeat;
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
   display: inline-block;
