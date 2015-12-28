@@ -9,6 +9,16 @@ $(function() {
     var delayArr = [];
 
     var toSlideId;
+
+    $.preloadImages = function() {
+            //遍历图片
+            for (var i = 0; i < arguments.length; i++) {
+                $("<img>").attr("src", arguments[i]);
+            }
+        }
+        // 预加载背景图
+    $.preloadImages("../img/home/city.png", "../img/home/mountain6.jpg", "../img/home/moon.jpg", "../img/business/bbg.png", "../img/contact/qipao.png", "../img/customer/aaa.png", '../img/advantage/bg.jpg', "../img/customer/bg.jpg");
+
     $(window).load(function() {
         // alert("加载完成！");
         $("#loading").hide();
@@ -175,9 +185,9 @@ $(function() {
     });
 
     // customer
-    $(".section_customer").on("mouseleave",".customer_ct",function(eve){
-        $(".active",this).removeClass("active");
-    }).on("mouseenter",".customer_ct li:not('.bg-active')",function(eve){
+    $(".section_customer").on("mouseleave", ".customer_ct", function(eve) {
+        $(".active", this).removeClass("active");
+    }).on("mouseenter", ".customer_ct li:not('.bg-active')", function(eve) {
         $(this).addClass("active").siblings(".active").removeClass("active");
     });
 

@@ -1,7 +1,7 @@
 /* css3 v1.0 */
 .section_advantage {
   background-color: #fff;
-  background-image: url('http://img.bizhi.sogou.com/images/2014/11/25/977244.jpg');
+  background-image: url('../img/advantage/bg.jpg');
   background-position: center;
   background-size: cover;
 }

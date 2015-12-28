@@ -6,6 +6,7 @@
 .slide_city {
   position: relative;
   z-index: 1;
+  background-color: #6F6F6F;
   background-image: url('../img/home/city.png');
   background-position: 0 center;
   background-size: auto;
@@ -79,6 +80,7 @@
   background-position-x: 100%;
 }
 .slide_mountain {
+  background-color: #6F6F6F;
   font-size: 2rem;
   position: relative;
   z-index: 0;
@@ -167,6 +169,7 @@
   letter-spacing: .25em;
 }
 .slide_moon {
+  background-color: #6F6F6F;
   position: relative;
   overflow: hidden;
 }
