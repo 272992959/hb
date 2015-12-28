@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>账户报告</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/_basic.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="../../css/module/report_spdm.css" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/green.css" media="all" title="green-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/orange.css" media="all" title="orange-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/magenta.css" media="all" title="magenta-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/gray.css" media="all" title="gray-theme"/>
+    <script type="text/javascript" src="../../js/plugin/styleswitcher.js"></script>
+    <!--[if lte IE 8]>
+      <script type="text/javascript" src="../../js/plugin/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="modal-shiftfix">
+        
+<div class="navbar navbar-fixed-top scroll-hide">
+    <div class="container-fluid top-bar">
+        <div class="pull-right">
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown settings hidden-xs">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span aria-hidden="true" class="icon-gears"></span>
+                        <div class="sr-only">
+                            Settings
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="settings-link blue" href="javascript:chooseStyle('none', 30)">
+                                <span></span>Blue</a>
+                        </li>
+                        <li>
+                            <a class="settings-link green" href="javascript:chooseStyle('green-theme', 30)">
+                                <span></span>Green</a>
+                        </li>
+                        <li>
+                            <a class="settings-link orange" href="javascript:chooseStyle('orange-theme', 30)">
+                                <span></span>Orange</a>
+                        </li>
+                        <li>
+                            <a class="settings-link magenta" href="javascript:chooseStyle('magenta-theme', 30)">
+                                <span></span>Magenta</a>
+                        </li>
+                        <li>
+                            <a class="settings-link gray" href="javascript:chooseStyle('gray-theme', 30)">
+                                <span></span>Gray</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown settings hidden-xs">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span aria-hidden="true" class="icon-resize-small"></span>
+                        <div class="sr-only">
+                            FullScreen
+                        </div>
+                    </a>
+                </li>
+                <li class="dropdown user hidden-xs">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <img width="34" height="34" src="../../img/avatar-male.jpg" />
+                        <label id="account_name"></label>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:;" id="logout">
+                                <i class="icon-signout"></i>退出登录</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <button class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="logo" href="index.html">houbu2</a>
+        <a class="logo_title hidden-xs" href="index.html">houbu</a>
+    </div>
+    <div class="container-fluid main-nav clearfix">
+        <div class="nav-collapse">
+            <ul class="nav">
+            
+                <li>
+                    <a href="index.html" class=current>
+                        <span aria-hidden="true" class="icon-bar-chart"></span>账户报告
+                    </a>
+                </li>
+                <li>
+                    <a href="promoter.html">
+                        <span aria-hidden="true" class="icon-phone-sign"></span>推广人员
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html">
+                        <span aria-hidden="true" class="icon-user"></span>用户
+                    </a>
+                </li>
+                <li>
+                    <a href="guest_user.html">
+                        <span aria-hidden="true" class="icon-group"></span>特邀用户
+                    </a>
+                </li>
+                <li>
+                    <a href="personal_info.html">
+                        <span aria-hidden="true" class="icon-male"></span>个人信息
+                    </a>
+                </li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+        <div class="container-fluid main-content" id="account_report">
+            
+                    <div class="widget-container" id="tips-container">
+                        <div class="widget-content">
+                        </div>
+                    </div>
+            <div class="widget-container fluid-height clearfix">
+                <div class="heading">
+                    <ul class="nav nav-tabs" data-tabs="tabs" id="spdm_report">
+                        <li>
+                            <a data-toggle="tab" href="#spd_tab1">
+                                <i class="icon-bar-chart"></i>
+                                <span>推广费用报告</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#spd_tab2">
+                                <i class="icon-hand-right"></i>
+                                <span>推广费用来源</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#spd_tab3">
+                                <i class="icon-stackexchange"></i>
+                                <span>投放效果</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="widget-content tab-content padded clearfix">
+                    <div class="tab-pane" id="spd_tab1">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                今日推广费用
+                                            </th>
+                                            <th>
+                                                昨日推广费用
+                                            </th>
+                                            <th>
+                                                7日推广费用
+                                            </th>
+                                            <th>
+                                                30日推广费用
+                                            </th>
+                                            <th>
+                                                总推广费用额
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-right">
+                                                ￥
+                                                <span id="header_td_1">--</span>
+                                            </td>
+                                            <td class="text-right">
+                                                ￥
+                                                <span id="header_td_2">--</span>
+                                            </td>
+                                            <td class="text-right">
+                                                ￥
+                                                <span id="header_td_3">--</span>
+                                            </td>
+                                            <td class="text-right">
+                                                ￥
+                                                <span id="header_td_4">--</span>
+                                            </td>
+                                            <td class="text-right">
+                                                ￥
+                                                <span id="header_td_5">--</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                
+            <div class="form-group pull-right custom_time">
+                <div class="col-sm-4">
+                    <input class="form-control" id="start_date" data-date-max="end_date" data-date-format="yyyy-MM-dd" placeholder="开始日期" type="text">
+                </div>
+                <div class="col-sm-4">
+                    <input class="form-control" id="end_date" data-date-min="start_date" data-date-format="yyyy-MM-dd" placeholder="结束日期" type="text">
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-success-outline btn-sure">确定</button>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-danger-outline btn-cancel">返回</button>
+                </div>
+            </div>
+            <div class="btn-group pull-right select_date" role="group" aria-label="...">
+                <button type="button" class="btn btn-info" data-num="7">最近7天</button>
+                <button type="button" class="btn btn-info-outline" data-num="30">最近30天</button>
+                <button type="button" class="btn btn-info-outline" data-num="90">最近90天</button>
+                <button type="button" class="btn btn-info-outline" data-num="0">自定义</button>
+            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div id="report-chart"></div>
+                            </div>
+                            <div class="col-md-5">
+                                <table class="table table-bordered table-striped" id="report-table">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="spd_tab2">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                
+            <div class="form-group pull-right custom_time">
+                <div class="col-sm-4">
+                    <input class="form-control" id="origin_stdate" data-date-max="origin_eddate" data-date-format="yyyy-MM-dd" placeholder="开始日期" type="text">
+                </div>
+                <div class="col-sm-4">
+                    <input class="form-control" id="origin_eddate" data-date-min="origin_stdate" data-date-format="yyyy-MM-dd" placeholder="结束日期" type="text">
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-success-outline btn-sure">确定</button>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-danger-outline btn-cancel">返回</button>
+                </div>
+            </div>
+            <div class="btn-group pull-right select_date" role="group" aria-label="...">
+                <button type="button" class="btn btn-info" data-num="7">最近7天</button>
+                <button type="button" class="btn btn-info-outline" data-num="30">最近30天</button>
+                <button type="button" class="btn btn-info-outline" data-num="90">最近90天</button>
+                <button type="button" class="btn btn-info-outline" data-num="0">自定义</button>
+            </div>
+                                <div class="btn-group pull-right select_origin" role="group" aria-label="...">
+                                    <button type="button" class="btn btn-info origin_promoter">推广人员</button>
+                                    <button type="button" class="btn btn-info-outline origin_guest_user">特邀用户</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div id="origin-chart"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table table-bordered table-striped" id="origin-table">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="spd_tab3">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                特邀用户涉及总人数
+                                            </th>
+                                            <th>
+                                                特邀用户带来用户量
+                                            </th>
+                                            <th>
+                                                特邀用户带来任务量
+                                            </th>
+                                            <th>
+                                                用户再邀请的百分比
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-right">
+                                                <span>--</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span>--</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span>--</span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span>--</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                
+            <div class="form-group pull-right custom_time">
+                <div class="col-sm-4">
+                    <input class="form-control" id="start_date" data-date-max="end_date" data-date-format="yyyy-MM-dd" placeholder="开始日期" type="text">
+                </div>
+                <div class="col-sm-4">
+                    <input class="form-control" id="end_date" data-date-min="start_date" data-date-format="yyyy-MM-dd" placeholder="结束日期" type="text">
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-success-outline btn-sure">确定</button>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-danger-outline btn-cancel">返回</button>
+                </div>
+            </div>
+            <div class="btn-group pull-right select_date" role="group" aria-label="...">
+                <button type="button" class="btn btn-info" data-num="7">最近7天</button>
+                <button type="button" class="btn btn-info-outline" data-num="30">最近30天</button>
+                <button type="button" class="btn btn-info-outline" data-num="90">最近90天</button>
+                <button type="button" class="btn btn-info-outline" data-num="0">自定义</button>
+            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div id="app-chart"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table table-bordered table-striped" id="app-table">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!--[if lte IE 8]>
+      <script type="text/javascript" src="../../js/plugin/selectivizr.js"></script>
+      <script type="text/javascript" src="../../js/plugin/excanvas.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="../../js/_config.js" ></script>
+    <script type="text/javascript" src="../../js/require.js" data-main="common/report_spdm.js"></script>
+</body>
+
+</html>

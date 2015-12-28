@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>提现列表</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/_basic.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="../../css/module/withdraw_apply.css" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/green.css" media="all" title="green-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/orange.css" media="all" title="orange-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/magenta.css" media="all" title="magenta-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/gray.css" media="all" title="gray-theme"/>
+    <script type="text/javascript" src="../../js/plugin/styleswitcher.js"></script>
+    <!--[if lte IE 8]>
+      <script type="text/javascript" src="../../js/plugin/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="modal-shiftfix">
+        
+<div class="navbar navbar-fixed-top scroll-hide">
+    <div class="container-fluid top-bar">
+        <div class="pull-right">
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown settings hidden-xs">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span aria-hidden="true" class="icon-gears"></span>
+                        <div class="sr-only">
+                            Settings
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="settings-link blue" href="javascript:chooseStyle('none', 30)">
+                                <span></span>Blue</a>
+                        </li>
+                        <li>
+                            <a class="settings-link green" href="javascript:chooseStyle('green-theme', 30)">
+                                <span></span>Green</a>
+                        </li>
+                        <li>
+                            <a class="settings-link orange" href="javascript:chooseStyle('orange-theme', 30)">
+                                <span></span>Orange</a>
+                        </li>
+                        <li>
+                            <a class="settings-link magenta" href="javascript:chooseStyle('magenta-theme', 30)">
+                                <span></span>Magenta</a>
+                        </li>
+                        <li>
+                            <a class="settings-link gray" href="javascript:chooseStyle('gray-theme', 30)">
+                                <span></span>Gray</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown settings hidden-xs">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span aria-hidden="true" class="icon-resize-small"></span>
+                        <div class="sr-only">
+                            FullScreen
+                        </div>
+                    </a>
+                </li>
+                <li class="dropdown user hidden-xs">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <img width="34" height="34" src="../../img/avatar-male.jpg" />
+                        <label id="account_name"></label>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:;" id="logout">
+                                <i class="icon-signout"></i>退出登录</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <button class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="logo" href="index.html">houbu2</a>
+        <a class="logo_title hidden-xs" href="index.html">houbu</a>
+    </div>
+    <div class="container-fluid main-nav clearfix">
+        <div class="nav-collapse">
+            <ul class="nav">
+            
+                <li>
+                    <a href="index.html">
+                        <span aria-hidden="true" class="icon-bar-chart"></span>账户报告
+                    </a>
+                </li>
+                <li>
+                    <a href="apply.html" class=current>
+                        <span aria-hidden="true" class="icon-money"></span>提现申请
+                    </a>
+                </li>
+                <li>
+                    <a href="records.html">
+                        <span aria-hidden="true" class="icon-list-alt"></span>提现记录
+                    </a>
+                </li>
+                <li>
+                    <a href="charge.html">
+                        <span aria-hidden="true" class="icon-money"></span>广告主充值
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html">
+                        <span aria-hidden="true" class="icon-user"></span>用户
+                    </a>
+                </li>
+                <li>
+                    <a href="personal_info.html">
+                        <span aria-hidden="true" class="icon-male"></span>个人信息
+                    </a>
+                </li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+        <div class="container-fluid main-content" id="apply_view">
+            
+                    <div class="widget-container" id="tips-container">
+                        <div class="widget-content">
+                        </div>
+                    </div>
+            <div class="widget-container fluid-height clearfix">
+                <div class="heading">
+                    <i class="icon-list"></i>用户提现申请列表
+                    <a class="btn btn-sm btn-info-outline btn_refresh pull-right" href="javascript:;">刷新</a>
+                </div>
+                <div class="widget-content padded clearfix">
+                    <table class="table table-bordered table-striped" id="apply_table">
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid dis-no" id="withdraw_detail">
+            <div class="widget-container">
+                <div class="heading">
+                    <i class="icon-sitemap"></i>提现记录
+                </div>
+                <div class="widget-content padded clearfix">
+                    <table class="table table-bordered table-striped" id="withdraw-record-table">
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid dis-no" id="deal_withdraw">
+            <div class="widget-container fluid-height clearfix">
+                <div class="heading">
+                    <i class="icon-user"></i>
+                    <span>处理申请</span>
+                </div>
+                <div class="widget-content padded clearfix">
+                    <form action="#" class="form-horizontal" id="withdraw_form">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">理由</label>
+                            <div class="col-md-7">
+                                <input class="form-control" id="deal_input" name="deal_input" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 text-right">
+                                <button class="btn btn-primary btn_save" type="button">保存</button>
+                                <button class="btn btn-default btn_close" type="button">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!--[if lte IE 8]>
+      <script type="text/javascript" src="../../js/plugin/selectivizr.js"></script>
+      <script type="text/javascript" src="../../js/plugin/excanvas.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="../../js/_config.js" ></script>
+    <script type="text/javascript" src="../../js/require.js" data-main="common/withdraw_apply.js"></script>
+</body>
+
+</html>

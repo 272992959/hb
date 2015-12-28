@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>个人信息</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/_basic.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="../../css/module/personal_info.css" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/green.css" media="all" title="green-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/orange.css" media="all" title="orange-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/magenta.css" media="all" title="magenta-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/gray.css" media="all" title="gray-theme"/>
+    <script type="text/javascript" src="../../js/plugin/styleswitcher.js"></script>
+    <!--[if lte IE 8]>
+      <script type="text/javascript" src="../../js/plugin/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="modal-shiftfix">
+        
+<div class="navbar navbar-fixed-top scroll-hide">
+    <div class="container-fluid top-bar">
+        <div class="pull-right">
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown settings hidden-xs">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span aria-hidden="true" class="icon-gears"></span>
+                        <div class="sr-only">
+                            Settings
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="settings-link blue" href="javascript:chooseStyle('none', 30)">
+                                <span></span>Blue</a>
+                        </li>
+                        <li>
+                            <a class="settings-link green" href="javascript:chooseStyle('green-theme', 30)">
+                                <span></span>Green</a>
+                        </li>
+                        <li>
+                            <a class="settings-link orange" href="javascript:chooseStyle('orange-theme', 30)">
+                                <span></span>Orange</a>
+                        </li>
+                        <li>
+                            <a class="settings-link magenta" href="javascript:chooseStyle('magenta-theme', 30)">
+                                <span></span>Magenta</a>
+                        </li>
+                        <li>
+                            <a class="settings-link gray" href="javascript:chooseStyle('gray-theme', 30)">
+                                <span></span>Gray</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown settings hidden-xs">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span aria-hidden="true" class="icon-resize-small"></span>
+                        <div class="sr-only">
+                            FullScreen
+                        </div>
+                    </a>
+                </li>
+                <li class="dropdown user hidden-xs">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <img width="34" height="34" src="../../img/avatar-male.jpg" />
+                        <label id="account_name"></label>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:;" id="logout">
+                                <i class="icon-signout"></i>退出登录</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <button class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="logo" href="index.html">houbu2</a>
+        <a class="logo_title hidden-xs" href="index.html">houbu</a>
+    </div>
+    <div class="container-fluid main-nav clearfix">
+        <div class="nav-collapse">
+            <ul class="nav">
+            
+                <li>
+                    <a href="index.html">
+                        <span aria-hidden="true" class="icon-user"></span>用户
+                    </a>
+                </li>
+                <li>
+                    <a href="personal_info.html" class=current>
+                        <span aria-hidden="true" class="icon-male"></span>个人信息
+                    </a>
+                </li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+            <div class="container-fluid main-content">
+                
+                    <div class="widget-container" id="tips-container">
+                        <div class="widget-content">
+                        </div>
+                    </div>
+                <div class="widget-container main-content fluid-height clearfix" id="account_info">
+                    <div class="widget-content padded">
+                        <form action="#" id="account_info_form" class="form-horizontal padded">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="heading info-title text-center">
+                                        <i class="icon-smile"></i>基本信息
+                                    </div>
+                                    
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <label class="control-label col-sm-4">账号</label>
+                                                    <div class="col-sm-7">
+                                                        <input class="form-control" id="user_count" disabled type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <label class="control-label col-sm-4">姓名</label>
+                                                    <div class="col-sm-7">
+                                                        <input class="form-control" id="user_name" name="user_name" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <label class="control-label col-sm-4">电话</label>
+                                                    <div class="col-sm-7">
+                                                        <input class="form-control" id="user_phone" name="user_phone" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="heading info-title text-center">
+                                        <i class="icon-keyboard"></i>密码
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="control-label col-sm-4">当前密码</label>
+                                            <div class="col-sm-7">
+                                                <input class="form-control" type="password" id="user_password" name="user_password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="control-label col-sm-4">新密码</label>
+                                            <div class="col-sm-7">
+                                                <input class="form-control" type="password" id="user_new_password" name="user_new_password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="control-label col-sm-4">确认密码</label>
+                                            <div class="col-sm-7">
+                                                <input class="form-control" type="password" id="user_repeat_password" name="user_repeat_password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-offset-6 col-md-6">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-11 text-right">
+                                                <button class="btn btn-primary" type="button" id="btn_edit_account">修改</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    
+    <!--[if lte IE 8]>
+      <script type="text/javascript" src="../../js/plugin/selectivizr.js"></script>
+      <script type="text/javascript" src="../../js/plugin/excanvas.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="../../js/_config.js" ></script>
+    <script type="text/javascript" src="../../js/require.js" data-main="common/personal_info.js"></script>
+</body>
+
+</html>

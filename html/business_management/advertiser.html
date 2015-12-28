@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>广告主列表</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/_basic.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="../../css/module/partner.css" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/green.css" media="all" title="green-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/orange.css" media="all" title="orange-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/magenta.css" media="all" title="magenta-theme"/>
+    <link rel="alternate stylesheet" type="text/css" href="../../css/color/gray.css" media="all" title="gray-theme"/>
+    <script type="text/javascript" src="../../js/plugin/styleswitcher.js"></script>
+    <!--[if lte IE 8]>
+      <script type="text/javascript" src="../../js/plugin/respond.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="modal-shiftfix">
+        
+<div class="navbar navbar-fixed-top scroll-hide">
+    <div class="container-fluid top-bar">
+        <div class="pull-right">
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown settings hidden-xs">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span aria-hidden="true" class="icon-gears"></span>
+                        <div class="sr-only">
+                            Settings
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="settings-link blue" href="javascript:chooseStyle('none', 30)">
+                                <span></span>Blue</a>
+                        </li>
+                        <li>
+                            <a class="settings-link green" href="javascript:chooseStyle('green-theme', 30)">
+                                <span></span>Green</a>
+                        </li>
+                        <li>
+                            <a class="settings-link orange" href="javascript:chooseStyle('orange-theme', 30)">
+                                <span></span>Orange</a>
+                        </li>
+                        <li>
+                            <a class="settings-link magenta" href="javascript:chooseStyle('magenta-theme', 30)">
+                                <span></span>Magenta</a>
+                        </li>
+                        <li>
+                            <a class="settings-link gray" href="javascript:chooseStyle('gray-theme', 30)">
+                                <span></span>Gray</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown settings hidden-xs">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span aria-hidden="true" class="icon-resize-small"></span>
+                        <div class="sr-only">
+                            FullScreen
+                        </div>
+                    </a>
+                </li>
+                <li class="dropdown user hidden-xs">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <img width="34" height="34" src="../../img/avatar-male.jpg" />
+                        <label id="account_name"></label>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="javascript:;" id="logout">
+                                <i class="icon-signout"></i>退出登录</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <button class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="logo" href="index.html">houbu2</a>
+        <a class="logo_title hidden-xs" href="index.html">houbu</a>
+    </div>
+    <div class="container-fluid main-nav clearfix">
+        <div class="nav-collapse">
+            <ul class="nav">
+            
+                <li>
+                    <a href="index.html">
+                        <span aria-hidden="true" class="icon-bar-chart"></span>报告
+                    </a>
+                </li>
+                <li>
+                    <a href="business.html">
+                        <span aria-hidden="true" class="icon-briefcase"></span>商务人员
+                    </a>
+                </li>
+                <li>
+                    <a href="advertiser.html" class=current>
+                        <span aria-hidden="true" class="icon-coffee"></span>广告主
+                    </a>
+                </li>
+                <li>
+                    <a href="task.html">
+                        <span aria-hidden="true" class="icon-tasks"></span>任务
+                    </a>
+                </li>
+                <li>
+                    <a href="personal_info.html">
+                        <span aria-hidden="true" class="icon-male"></span>个人信息
+                    </a>
+                </li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+            <div class="container-fluid main-content" id="advertiser">
+                
+                    <div class="widget-container" id="tips-container">
+                        <div class="widget-content">
+                        </div>
+                    </div>
+                <div class="widget-container fluid-height clearfix">
+                    <div class="heading">
+                        <i class="icon-list"></i>广告主
+                        <a class="btn btn-sm btn-primary-outline pull-right" id="btn_add_advertiser">
+                            <i class="icon-plus"></i>添加广告主</a>
+                    </div>
+                    <div class="widget-content padded clearfix">
+                        <table class="table table-bordered table-striped" id="advertiser-table">
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid dis-no" id="edit_advertiser">
+                <div class="widget-container fluid-height clearfix">
+                    <div class="heading">
+                        <i class="icon-user"></i>
+                        <span></span>
+                    </div>
+                    <div class="widget-content padded">
+                        <form action="#" class="form-horizontal" id="advertiser_form">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">公司</label>
+                                <div class="col-md-7">
+                                    <input id="ad_id" type="hidden">
+                                    <input class="form-control" id="ad_company" name="ad_company" placeholder="公司" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">姓名</label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="ad_name" name="ad_name" placeholder="姓名" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">电话</label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="ad_phone" name="ad_phone" placeholder="电话" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">折扣率(免费)</label>
+                                <div class="col-md-7">
+                                    <div class="input-group">
+                                        <input class="form-control" id="ad_discount" name="ad_discount" placeholder="折扣率(免费)" type="text">
+                                        <span class="input-group-addon">
+                                            %
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">折扣率(付费)</label>
+                                <div class="col-md-7">
+                                    <div class="input-group">
+                                        <input class="form-control" id="ad_discount_charge" name="ad_discount_charge" placeholder="折扣率(付费)" type="text">
+                                        <span class="input-group-addon">
+                                            %
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">账号</label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="ad_username" name="ad_username" placeholder="账号" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">密码</label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="ad_password" name="ad_password" placeholder="若不修改请留空" type="text">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-10 text-right">
+                                    <button class="btn btn-primary btn_save" type="button">保存</button>
+                                    <button class="btn btn-default-outline btn_close" type="button">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid dis-no" id="add_task">
+                <div class="widget-container fluid-height clearfix">
+                    <div class="heading">
+                        <i class="icon-user"></i>添加任务
+                    </div>
+                    <div class="widget-content padded">
+                        <form action="#" class="form-horizontal" id="task_form">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">APP Store链接</label>
+                            <div class="col-md-7">
+                                <input type="hidden" id="task_ad_id">
+                                <input class="form-control" id="task_storeurl" name="task_storeurl" placeholder="链接" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">设置自定义链接</label>
+                            <div class="col-md-7">
+                                <label class="radio-inline">
+                                    <input value="1" type="radio" name="set_link">
+                                    <span>是</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input value="0" type="radio" checked="checked" name="set_link">
+                                    <span>否</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group link_container dis-no">
+                            <label class="control-label col-md-3">自定义链接</label>
+                            <div class="col-md-7">
+                                <input class="form-control" id="task_link" name="task_link" placeholder="自定义链接" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">设置关键词</label>
+                            <div class="col-md-7">
+                                <label class="radio-inline">
+                                    <input value="1" type="radio" name="set_keyword">
+                                    <span>是</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input value="0" type="radio" checked="checked" name="set_keyword">
+                                    <span>否</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group keyword_container dis-no">
+                            <label class="control-label col-md-3">关键词</label>
+                            <div class="col-md-7">
+                                <input class="form-control" id="task_keyword" name="task_keyword" placeholder="关键词" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">设置时间</label>
+                            <div class="col-md-7">
+                                <label class="radio-inline">
+                                    <input value="1" type="radio" name="set_time">
+                                    <span>是</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input value="0" type="radio" checked="checked" name="set_time">
+                                    <span>否</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group time_container dis-no">
+                            <label class="control-label col-md-3">开始时间</label>
+                            <div class="col-md-7">
+                                <input class="form-control" id="task_stime" name="task_stime" data-date-max="task_expire" placeholder="开始时间" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group time_container dis-no">
+                            <label class="control-label col-md-3">截止时间</label>
+                            <div class="col-md-7">
+                                <input class="form-control" id="task_expire" name="task_expire" data-date-min="task_stime" placeholder="截止时间" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">设置评论占比</label>
+                            <div class="col-md-7">
+                                <label class="radio-inline">
+                                    <input value="1" type="radio" name="set_iscomment">
+                                    <span>是</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input value="0" type="radio" checked="checked" name="set_iscomment">
+                                    <span>否</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group iscomment_container">
+                            <label class="control-label col-md-3">评论占比</label>
+                            <div class="col-md-7">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        1/
+                                    </span>
+                                    <input class="form-control" id="task_iscomment" name="task_iscomment" placeholder="评论占比" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">用户任务单价</label>
+                            <div class="col-md-7">
+                                <div class="input-group">
+                                    <input class="form-control" id="task_price" name="task_price" placeholder="单价" type="text">
+                                    <span class="input-group-addon">
+                                        元
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">广告主任务单价</label>
+                            <div class="col-md-7">
+                                <div class="input-group">
+                                    <input class="form-control" id="task_taskprice" name="task_taskprice" placeholder="单价" type="text">
+                                    <span class="input-group-addon">
+                                        元
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">keywordTop</label>
+                            <div class="col-md-7">
+                                <input class="form-control" id="task_keywordTop" name="task_keywordTop" placeholder="keywordTop" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">体验时间</label>
+                            <div class="col-md-7">
+                                <div class="input-group">
+                                    <input class="form-control" id="task_steptime" name="task_steptime" placeholder="体验时间" type="text">
+                                    <span class="input-group-addon">
+                                        分钟
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">需要注册</label>
+                            <div class="col-md-7">
+                                <label class="radio-inline">
+                                    <input value="1" type="radio" name="set_isreg">
+                                    <span>是</span>
+                                </label>
+                                <label class="radio-inline">
+                                    <input value="0" type="radio" checked="checked" name="set_isreg">
+                                    <span>否</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">投放份数</label>
+                            <div class="col-md-7">
+                                <input class="form-control" id="task_countall" name="task_countall" placeholder="投放份数" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 text-right">
+                                <button class="btn btn-primary btn_save" type="button">保存</button>
+                                <button class="btn btn-default-outline btn_close" type="button">关闭</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid dis-no" id="advertiser_info">
+                <div class="widget-container fluid-height clearfix" id="advertiser_report">
+                    <table class="table table-bordered" id="report_head">
+                        <thead>
+                            <tr>
+                                <th>
+                                    今日消费
+                                </th>
+                                <th>
+                                    昨日消费
+                                </th>
+                                <th>
+                                    7日消费
+                                </th>
+                                <th>
+                                    30日消费
+                                </th>
+                                <th>
+                                    累计消费
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-right">
+                                    ￥
+                                    <span id="header_td_1">--</span>
+                                </td>
+                                <td class="text-right">
+                                    ￥
+                                    <span id="header_td_2">--</span>
+                                </td>
+                                <td class="text-right">
+                                    ￥
+                                    <span id="header_td_3">--</span>
+                                </td>
+                                <td class="text-right">
+                                    ￥
+                                    <span id="header_td_4">--</span>
+                                </td>
+                                <td class="text-right">
+                                    ￥
+                                    <span id="header_td_5">--</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="heading">
+                        <i class="icon-user"></i>广告主账户报告
+                        <div class="form-group pull-right custom_time">
+                            <div class="col-sm-4">
+                                <input class="form-control" id="ad_stdate" data-date-max="ad_eddate" data-date-format="yyyy-MM-dd" placeholder="开始日期" type="text">
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-control" id="ad_eddate" data-date-min="ad_stdate" data-date-format="yyyy-MM-dd" placeholder="结束日期" type="text">
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-success-outline btn-sure">确定</button>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-danger-outline btn-cancel">返回</button>
+                            </div>
+                        </div>
+                        <div class="btn-group pull-right select_date" role="group" aria-label="...">
+                            <button type="button" class="btn btn-info" data-num="7">最近7天</button>
+                            <button type="button" class="btn btn-info-outline" data-num="30">最近30天</button>
+                            <button type="button" class="btn btn-info-outline" data-num="90">最近90天</button>
+                            <button type="button" class="btn btn-info-outline" data-num="0">自定义</button>
+                        </div>
+                    </div>
+                    <div class="widget-content padded clearfix">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="report-chart"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered table-striped" id="report-table">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid dis-no" id="recharge">
+                <div class="widget-container fluid-height clearfix">
+                    <div class="heading">
+                        <i class="icon-user"></i>充值
+                    </div>
+                    <div class="widget-content padded">
+                        <form action="#" class="form-horizontal" id="pay_form">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">充值金额</label>
+                                <div class="col-md-7">
+                                    <input type="hidden" id="recharge_ad_id">
+                                    <div class="input-group">
+                                        <input class="form-control" id="recharge_money" name="recharge_money" placeholder="充值金额" type="text">
+                                        <span class="input-group-addon">
+                                            元
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-10 text-right">
+                                    <button class="btn btn-primary btn_save" type="button">保存</button>
+                                    <button class="btn btn-default-outline btn_close" type="button">关闭</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    
+    <!--[if lte IE 8]>
+      <script type="text/javascript" src="../../js/plugin/selectivizr.js"></script>
+      <script type="text/javascript" src="../../js/plugin/excanvas.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="../../js/_config.js" ></script>
+    <script type="text/javascript" src="../../js/require.js" data-main="common/partner.js"></script>
+</body>
+
+</html>

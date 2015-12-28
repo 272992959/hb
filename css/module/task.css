@@ -1,0 +1,13 @@
+#filter_status {
+  margin: 0 10px 10px 0;
+}
+#task-table {
+  table-layout: fixed;
+}
+#task-table .label {
+  line-height: 2em;
+  width: 4.5em;
+  height: 2em;
+  padding: 0;
+  border-radius: .5em;
+}

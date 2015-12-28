@@ -1,0 +1,85 @@
+{
+    "error": 1,
+    "aaData": [
+        {
+            "date": "2015-10-29",
+            "price_all": 100,
+            "sum": 200,
+            "sum_finish": 300,
+            "xxx": 49,
+            "sum_percent": 12
+        },
+        {
+            "date": "2015-10-30",
+            "price_all": 231,
+            "sum": 243,
+            "sum_finish": 53,
+            "xxx": 159,
+            "sum_percent": 312
+        },
+        {
+            "date": "2015-10-31",
+            "price_all": 432,
+            "sum": 534,
+            "sum_finish": 432,
+            "xxx": 239,
+            "sum_percent": 54
+        },
+        {
+            "date": "2015-11-01",
+            "price_all": 243,
+            "sum": 231,
+            "sum_finish": 432,
+            "xxx": 139,
+            "sum_percent": 321
+        },
+        {
+            "date": "2015-11-02",
+            "price_all": 432,
+            "sum": 0,
+            "sum_finish": 32,
+            "xxx": 139,
+            "sum_percent": 321
+        },
+        {
+            "date": "2015-11-03",
+            "price_all": 384,
+            "sum": 4352,
+            "sum_finish": 513,
+            "xxx": 219,
+            "sum_percent": 32
+        },
+        {
+            "date": "2015-11-04",
+            "price_all": 130,
+            "sum": 123,
+            "sum_finish": 564,
+            "xxx": 169,
+            "sum_percent": 312
+        },
+        {
+            "date": "2015-11-05",
+            "price_all": 450,
+            "sum": 543,
+            "sum_finish": 657,
+            "xxx": 659,
+            "sum_percent": 0
+        },
+        {
+            "date": "2015-11-06",
+            "price_all": 321,
+            "sum": 321,
+            "sum_finish": 0,
+            "xxx": 9,
+            "sum_percent": 132
+        },
+        {
+            "date": "2015-11-07",
+            "price_all": 34,
+            "sum": 432,
+            "sum_finish": 231,
+            "xxx": 239,
+            "sum_percent": 32
+        }
+    ]
+}

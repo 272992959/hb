@@ -1,0 +1,10 @@
+{
+    "error": 1,
+    "aaData": {
+        "today": 100,
+        "yesterday": 200,
+        "seven": 700,
+        "thirty": 3000,
+        "money": 50000
+    }
+}
