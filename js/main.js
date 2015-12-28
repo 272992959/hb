@@ -17,7 +17,7 @@ $(function() {
             }
         }
         // 预加载背景图
-    $.preloadImages("../img/home/city.png", "../img/home/mountain6.jpg", "../img/home/moon.jpg", "../img/business/bbg.png", "../img/contact/qipao.png", "../img/customer/aaa.png", '../img/advantage/bg.jpg', "../img/customer/bg.jpg");
+    $.preloadImages("../img/home/city.jpg", "../img/home/mountain.jpg", "../img/home/moon.jpg", "../img/business/bbg.jpg", "../img/contact/qipao.png", "../img/customer/aaa.png", '../img/advantage/bg.jpg', "../img/customer/bg.jpg");
 
     $(window).load(function() {
         // alert("加载完成！");
@@ -113,12 +113,12 @@ $(function() {
 
 
         // customer
-        $('.grid').masonry({
-            columnWidth: '.grid-item',
-            itemSelector: '.grid-item',
-            transitionDuration: '0s',
-            isFitWidth: true
-        });
+        // $('.grid').masonry({
+        //     columnWidth: '.grid-item',
+        //     itemSelector: '.grid-item',
+        //     transitionDuration: '0s',
+        //     isFitWidth: true
+        // });
     });
 
     // dock

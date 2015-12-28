@@ -3697,7 +3697,7 @@ header.home .words {
   position: relative;
   z-index: 1;
   background-color: #6F6F6F;
-  background-image: url('../img/home/city.png');
+  background-image: url('../img/home/city.jpg');
   background-position: 0 center;
   background-size: auto;
   -webkit-transition: background-position-x 10s;
@@ -3783,7 +3783,7 @@ header.home .words {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url('../img/home/mountain6.jpg');
+  background-image: url('../img/home/mountain.jpg');
   background-position: center 70%;
   -webkit-transform: scale(2);
   -moz-transform: scale(2);
@@ -4007,7 +4007,7 @@ header.home .words {
 }
 .section_business {
   background-color: #ffc781;
-  background-image: url('../img/business/bbg.png');
+  background-image: url('../img/business/bbg.jpg');
   background-position: center;
   background-size: cover;
 }
